@@ -1,0 +1,59 @@
+import java.text.DecimalFormat
+
+fun main() {
+    // 1. Criação de Variáveis
+    val nomeProduto: String = "PcGamer"
+    val precoUnitario: Double = 3500.00
+    val quantidadeComprada: Int = 5
+    val taxaImposto: Double = 0.18 // 18%
+    val margemLucro: Double = 0.20 // 20%
+
+    // 2. Operações Simples
+    val valorTotalSemImpostos = precoUnitario * quantidadeComprada
+    val valorImposto = valorTotalSemImpostos * taxaImposto
+    val valorTotalComImpostos = valorTotalSemImpostos + valorImposto
+    val precoVenda = valorTotalComImpostos * (1 + margemLucro)
+
+    // 3. Desafio Extra
+    val df = DecimalFormat("R$ #,##0.00")
+    val valorTotalComImpostosFormatado = df.format(valorTotalComImpostos)
+    val precoVendaFormatado = df.format(precoVenda)
+
+    // 4. Mensagem Final
+    val mensagemFinal = """
+        Produto: $nomeProduto
+        Valor Total com Impostos: $valorTotalComImpostosFormatado
+        Preço de Venda Sugerido: $precoVendaFormatado
+    """.trimIndent()
+
+    // 5. Exibição de Resultados
+    println("Nome do Produto: $nomeProduto")
+    println("Preço Unitário: R$ $precoUnitario")
+    println("Quantidade Comprada: $quantidadeComprada")
+    println("Taxa de Imposto: ${taxaImposto * 100}%")
+    println("Margem de Lucro: ${margemLucro * 100}%")
+    println("Valor Total Sem Impostos: R$ $valorTotalSemImpostos")
+    println("Valor do Imposto: R$ $valorImposto")
+    println("Valor Total Com Impostos: $valorTotalComImpostosFormatado")
+    println("Preço de Venda: $precoVendaFormatado")
+    println("Mensagem Final: $mensagemFinal")
+}
+
+
+
+
+
+//comentarios sobre decimal format
+ A classe DecimalFormat em Kotlin (e Java) é usada para formatar números de acordo com um padrão específico. Ela é muito útil quando você precisa exibir números em um formato legível, como moeda, porcentagens, ou com um número fixo de casas decimais.
+
+Principais Características da DecimalFormat:
+Criação de um Padrão de Formatação:
+Você pode definir um padrão que especifica como os números devem ser formatados. Por exemplo, "R$ #,##0.00" formata números como moeda brasileira, com separadores de milhar e duas casas decimais.
+Símbolos de Padrão Comuns:
+0: Exibe um dígito ou zero se não houver dígito.
+#: Exibe um dígito ou nada se não houver dígito.
+,: Separador de milhar.
+.: Separador decimal.
+¤: Símbolo de moeda (pode ser substituído por R$ ou outro símbolo de moeda).
+
+
