@@ -1,0 +1,27 @@
+fun main() {
+    // 1. Criação de Variáveis
+
+    val nomePessoa: String = "Joao"
+    val idadePessoa: Int = 25
+    val salarioBrutoMensal: Double = 5000.0
+    val mesesTrabalhados: Int = 12
+    val quantidadeProdutosComprados: Int = 150
+
+    val salarioAnualBruto: Double = salarioBrutoMensal * mesesTrabalhados
+
+    val desconto: Double = 2000.0
+    val salarioAnualLiquido: Double = salarioAnualBruto - desconto
+
+
+    val mensagem: String = "Olá, $nomePessoa! Seu salário anual líquido é R$ $salarioAnualLiquido."
+
+
+    println("Nome da pessoa: $nomePessoa")
+    println("Idade da pessoa: $idadePessoa anos")
+    println("Salário bruto mensal: R$ $salarioBrutoMensal")
+    println("Quantidade de meses trabalhados: $mesesTrabalhados")
+    println("Quantidade de produtos comprados: $quantidadeProdutosComprados")
+    println("Salário anual bruto: R$ $salarioAnualBruto")
+    println("Salário anual líquido: R$ $salarioAnualLiquido")
+    println(mensagem)
+}
